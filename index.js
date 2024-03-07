@@ -10,10 +10,6 @@ app.disable('x-powered-by')
 
 app.use(express.json())
 
-// Para permitir el acceso a cualquier conexion (CORS)
-// app.use(cors())
-
-// Acceso a conexiones especificas utilizando cors(libreria)
 const ACCEPTED_ORIGINS = ['http://localhost:8080', 'http://localhost:5000']
 
 app.use(
