@@ -1,0 +1,44 @@
+###
+GET http://localhost:3001/movies
+
+###
+GET http://localhost:3001/movies/ccf36f2e-8566-47f7-912d-9f4647250bc7
+
+###
+GET http://localhost:3001/movies?genre=Crime
+
+###
+POST http://localhost:3001/movies
+Content-Type: application/json
+
+// sql line is filtered by zod
+{
+    "sql": "SELECT * FROM users",
+    "title": "Dune",
+    "genre": ["Action"],
+    "year": 1976,
+    "director": "Random Director",
+    "duration": 195,
+    "rate": 9.5,
+    "poster": "https://m.media-amazon.com/images/I/61YsswH6vQL._AC_UF894,1000_QL80_.jpg"
+}
+
+###
+POST http://localhost:3001/movies
+Content-Type: application/json
+
+// Bad request test
+{
+    "title": "Dune",
+    "genre": ["Comedy"],
+    "year": 19726,
+    "director": 12312
+}
+
+###
+PATCH http://localhost:3001/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "year": 1995
+}
