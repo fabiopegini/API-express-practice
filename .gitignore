@@ -1,1 +1,4 @@
 node_modules
+requests
+.eslintrc.cjs
+.prettierrc
